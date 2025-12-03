@@ -1,0 +1,10 @@
+name = "abhijithkrishna-portfolio"
+main = "src/index.js"
+compatibility_date = "2025-12-03"
+
+[env.production]
+name = "abhijithkrishna-portfolio-prod"
+
+[build]
+command = "npm run build"
+cwd = "."
