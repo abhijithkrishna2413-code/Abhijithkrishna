@@ -1,6 +1,9 @@
 name = "portfolio"
-main = "src/index.js"
 compatibility_date = "2025-12-03"
+main = "src/index.js"
 
 [env.production]
-name = "abhijithkrishna-portfolio-prod"
+route = "abhijithkrishna-portfolio-prod"
+
+[assets]
+directory = "."
