@@ -1,6 +1,7 @@
-﻿/*
+/*
 * ----------------------------------------------------------------------------------------
-Author       : Hridoy
+Author       : Abhinand 
+redesigned by : www.gridify.in
 Template Name: Bentos - Personal Portfolio HTML Template
 Version      : 1.0                                          
 * ----------------------------------------------------------------------------------------
@@ -36,7 +37,8 @@ Version      : 1.0
 :root {
     --main-color: #9f9f9f;
     --heading-color: #fff;
-    --primary-color: #00A651; /* green */
+    --primary-color: #00A651;
+    /* green */
     --lighter-color: #ccc;
     --subtitle-color: #ccc;
     --black-color: #000;
@@ -414,7 +416,8 @@ html {
 }
 
 .theme-btn {
-    background: #00A651; /* green */
+    background: #00A651;
+    /* green */
     color: #fff;
     cursor: pointer;
     display: inline-block;
@@ -436,7 +439,7 @@ html {
 }
 
 .menu-btns a.theme-btn:hover {
-background: #00A651;
+    background: #00A651;
 }
 
 .theme-btn:focus {
@@ -1379,10 +1382,10 @@ background: #00A651;
 .scroller[data-animated="true"] {
     overflow: hidden;
     -webkit-mask: linear-gradient(90deg,
-        transparent,
-        white 20%,
-        white 80%,
-        transparent);
+            transparent,
+            white 20%,
+            white 80%,
+            transparent);
     mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
 }
 
@@ -1664,13 +1667,16 @@ ul.extra-skills li i {
 .single-info h3 {
     font-size: 20px;
 }
-.single-image{
+
+.single-image {
     margin-bottom: 30px;
 }
+
 .single-info {
     padding-bottom: 30px;
 }
-.single-info:last-child{
+
+.single-info:last-child {
     padding-bottom: 0px;
 }
 
@@ -2321,16 +2327,19 @@ ul.extra-skills li i {
     box-shadow: rgba(255, 255, 255, 0.025) 0px 0.362176px 0.651917px -1px inset, rgba(255, 255, 255, 0.036) 0px 3px 5.4px -2px inset;
     background-color: #121214;
 }
+
 .call-to-action-area {
     padding-top: 15px;
-    
+
 }
-.call-to-action-part  h2{
+
+.call-to-action-part h2 {
     font-size: 40px;
     line-height: 50px;
     margin-bottom: 20px;
     font-weight: 400;
 }
+
 .footer-bottom {}
 
 .footer-bottom .copyright-text {
@@ -2724,7 +2733,8 @@ ul.blog_pagination li a:hover {
 }
 
 .single-side-bar ul li a:hover {
-    color: #fff opacity: 1;
+    color: #fff;
+    opacity: 1;
 }
 
 .single-blog-social-icon {
@@ -3006,4 +3016,206 @@ ul.blog_pagination li a:hover {
     border-radius: 14px;
     padding: 25px;
     border: 1px solid var(--border-color);
+}
+
+/*
+* ----------------------------------------------------------------------------------------
+* 17. FEEDBACK POPUP STYLE
+* ----------------------------------------------------------------------------------------
+*/
+.feedback-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.feedback-popup.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.feedback-content {
+    background: #ffffff;
+    border-radius: 32px;
+    padding: 48px 40px;
+    width: 90%;
+    max-width: 480px;
+    text-align: center;
+    position: relative;
+    transform: translateY(20px) scale(0.95);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+.feedback-popup.active .feedback-content {
+    transform: translateY(0) scale(1);
+}
+
+.close-popup {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    background: transparent;
+    color: #666;
+    font-size: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+    border: none;
+    outline: none;
+}
+
+.close-popup:hover {
+    color: #000;
+    transform: rotate(90deg);
+}
+
+.icon-container {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 32px;
+    font-size: 32px;
+    color: #fff;
+}
+
+.icon-container.success {
+    background: #00A651;
+}
+
+.icon-container.error {
+    background: #e11d48;
+}
+
+.feedback-content h2 {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: #111;
+}
+
+.feedback-content p {
+    color: #666;
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 32px;
+}
+
+.status-box {
+    background: #ffffff;
+    border: 1px solid #f0f0f0;
+    border-radius: 20px;
+    padding: 24px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 32px;
+    text-align: left;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.status-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.status-item:not(:last-child) {
+    border-right: 1px solid #f0f0f0;
+    padding-right: 16px;
+}
+
+.status-label {
+    font-size: 13px;
+    color: #888;
+    margin-bottom: 6px;
+}
+
+.status-value {
+    font-weight: 600;
+    font-size: 15px;
+    color: #111;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.status-value.success {
+    color: #00A651;
+}
+
+.status-value.error {
+    color: #e11d48;
+}
+
+.popup-btns {
+    display: flex;
+    gap: 16px;
+}
+
+.popup-btns button {
+    flex: 1;
+    padding: 16px;
+    border-radius: 100px;
+    font-weight: 600;
+    font-size: 16px;
+    transition: all 0.3s;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-secondary {
+    background: #f0fdf4;
+    color: #111;
+}
+
+.btn-secondary:hover {
+    background: #dcfce7;
+    transform: translateY(-2px);
+}
+
+.btn-primary {
+    background: #00A651;
+    color: #fff;
+    box-shadow: 0 10px 15px -3px rgba(0, 166, 81, 0.3);
+}
+
+.btn-primary:hover {
+    background: #008e45;
+    transform: translateY(-2px);
+    box-shadow: 0 20px 25px -5px rgba(0, 166, 81, 0.4);
+}
+
+@media (max-width: 480px) {
+    .feedback-content {
+        padding: 40px 24px;
+    }
+
+    .status-box {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .status-item:not(:last-child) {
+        border-right: none;
+        border-bottom: 1px solid #f0f0f0;
+        padding-right: 0;
+        padding-bottom: 16px;
+    }
+
+    .popup-btns {
+        flex-direction: column;
+    }
 }
